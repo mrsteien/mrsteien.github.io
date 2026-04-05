@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michael Steien — Forward Deployed Engineer</title>
+  <meta name="description" content="Portfolio and resume of Michael Steien, Forward Deployed Engineer at Rangr Data · Accenture." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0e0f11;
+      --bg-card: #16181c;
+      --border: rgba(255,255,255,0.08);
+      --border-mid: rgba(255,255,255,0.14);
+      --text-primary: #f0f0ee;
+      --text-secondary: #9a9a95;
+      --text-tertiary: #5a5a56;
+      --accent: #378ADD;
+      --accent-dim: rgba(55,138,221,0.15);
+      --green: #1D9E75;
+      --green-bg: rgba(29,158,117,0.12);
+      --green-border: rgba(29,158,117,0.35);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .mono { font-family: 'Space Mono', monospace; }
+
+    /* Layout */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    /* Hero */
+    .hero { margin-bottom: 4rem; }
+
+    .hero-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--text-tertiary);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-name {
+      font-size: clamp(2.6rem, 7vw, 4.2rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .hero-role {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-role .dot { color: var(--text-tertiary); }
+
+    .hero-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-links a {
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(55,138,221,0.3);
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+
+    .hero-links a:hover { border-color: var(--accent); }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    /* Section label */
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 2rem;
+    }
+
+    /* Jobs */
+    .job {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      gap: 2px 16px;
+      margin-bottom: 2.25rem;
+    }
+
+    .job:last-child { margin-bottom: 0; }
+
+    .job-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .job-company {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .job-date {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--text-tertiary);
+      text-align: right;
+      white-space: nowrap;
+      padding-top: 4px;
+    }
+
+    .job-bullets {
+      grid-column: 1 / -1;
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .job-bullets li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    .job-bullets li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--text-tertiary);
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.05em;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--green-bg);
+      color: var(--green);
+      border: 1px solid var(--green-border);
+    }
+
+    /* Skills */
+    .skill-group { margin-bottom: 1.25rem; }
+
+    .skill-group-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 8px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border-mid);
+      color: var(--text-secondary);
+      margin: 3px 3px 3px 0;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .tag:hover { border-color: rgba(255,255,255,0.25); color: var(--text-primary); }
+
+    .tag.hi {
+      background: var(--accent-dim);
+      border-color: rgba(55,138,221,0.35);
+      color: #85B7EB;
+    }
+
+    /* Education */
+    .edu-entry { margin-bottom: 1.5rem; }
+    .edu-entry:last-child { margin-bottom: 0; }
+
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .edu-deg { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+    .edu-date { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--text-tertiary); }
+    .edu-school { font-size: 13px; color: var(--text-secondary); margin-top: 3px; }
+
+    /* Volunteer */
+    .vol-item {
+      font-size: 13px;
+      color: var(--text-secondary);
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .vol-item::before { content: '›'; position: absolute; left: 0; color: var(--text-tertiary); }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.12em;
+      margin-top: 4rem;
+    }
+
+    /* Subtle top accent line */
+    body::before {
+      content: '';
+      display: block;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 560px) {
+      .container { padding: 2.5rem 1.25rem 4rem; }
+      .job { grid-template-columns: 1fr; }
+      .job-date { text-align: left; padding-top: 0; margin-top: 2px; }
+      .hero-role { gap: 6px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <p class="hero-eyebrow">// michael.steien · portfolio</p>
+    <h1 class="hero-name">Michael<br>Steien</h1>
+    <div class="hero-role">
+      <span>Forward Deployed Engineer</span>
+      <span class="dot">·</span>
+      <span>Rangr Data · Accenture</span>
+      <span class="dot">·</span>
+      <span>Grand Forks, ND</span>
+    </div>
+    <div class="hero-links">
+      <a href="mailto:michael.steien@gmail.com">michael.steien@gmail.com</a>
+      <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="tel:2186894212">218-689-4212</a>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- EXPERIENCE -->
+  <section>
+    <p class="section-label">Experience</p>
+
+    <div class="job">
+      <div>
+        <div class="job-title">Forward Deployed Engineer <span class="badge">current</span></div>
+        <div class="job-company">Rangr Data · part of Accenture</div>
+      </div>
+      <div class="job-date">Mar 2026 – Present</div>
+      <ul class="job-bullets">
+        <li>Building and deploying solutions on the Palantir Foundry stack for enterprise clients</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div>
+        <div class="job-title">American Tech Fellow</div>
+        <div class="job-company">Palantir Technologies</div>
+      </div>
+      <div class="job-date">Sep – Nov 2025</div>
+      <ul class="job-bullets">
+        <li>Architected a metadata-first ontology connecting agricultural QC, logistics, and order data</li>
+        <li>Built ETL pipelines and reusable ingestion frameworks to automate operational workflows</li>
+        <li>Integrated microservices with AIP Object models, applying best practices in data lineage and semantic reusability</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div>
+        <div class="job-title">IT Manager</div>
+        <div class="job-company">Black Gold Farms</div>
+      </div>
+      <div class="job-date">Apr 2024 – Mar 2026</div>
+      <ul class="job-bullets">
+        <li>Designed and deployed advanced data models to support BI and analytics initiatives</li>
+        <li>Streamlined ETL/ELT processes, ensuring accurate data integration across systems</li>
+        <li>Developed and optimized cloud-based data pipelines leveraging AWS and Microsoft Fabric</li>
+        <li>Oversaw IT strategy, infrastructure, team development, and business alignment</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div>
+        <div class="job-title">IT Business Analyst</div>
+        <div class="job-company">Black Gold Farms</div>
+      </div>
+      <div class="job-date">Jan 2020 – Apr 2024</div>
+      <ul class="job-bullets">
+        <li>Designed interactive Power BI dashboards enabling data-driven decision making</li>
+        <li>Developed and optimized complex SQL queries for efficient data extraction and reporting</li>
+        <li>Led data modeling initiatives, creating scalable frameworks for advanced analytics</li>
+        <li>Collaborated with stakeholders to gather requirements and deliver technical solutions</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div>
+        <div class="job-title">Cyber Warfare Officer <span class="badge">current</span></div>
+        <div class="job-company">North Dakota Army National Guard</div>
+      </div>
+      <div class="job-date">Aug 2023 – Present</div>
+      <ul class="job-bullets">
+        <li>Lead diverse teams in high-pressure environments, ensuring mission objectives are met efficiently</li>
+        <li>Manage operational planning, coordinating resources and personnel to achieve organizational goals</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SKILLS -->
+  <section>
+    <p class="section-label">Skills</p>
+
+    <div class="skill-group">
+      <p class="skill-group-label">Languages</p>
+      <span class="tag hi">SQL</span>
+      <span class="tag hi">Python</span>
+      <span class="tag hi">Node.js</span>
+      <span class="tag">DAX</span>
+    </div>
+
+    <div class="skill-group">
+      <p class="skill-group-label">Platforms &amp; Tools</p>
+      <span class="tag hi">Palantir Foundry</span>
+      <span class="tag hi">Palantir AIP</span>
+      <span class="tag">Microsoft Fabric</span>
+      <span class="tag">AWS</span>
+      <span class="tag">Databricks</span>
+      <span class="tag">Azure Data Studio</span>
+      <span class="tag">Power BI</span>
+      <span class="tag">SSRS</span>
+      <span class="tag">Microsoft SQL Server</span>
+      <span class="tag">Docker</span>
+    </div>
+
+    <div class="skill-group">
+      <p class="skill-group-label">Other</p>
+      <span class="tag">Dynamics 365</span>
+      <span class="tag">Business Central</span>
+      <span class="tag">Dynamics GP</span>
+      <span class="tag">Power Query</span>
+      <span class="tag">Visual Studio</span>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- EDUCATION -->
+  <section>
+    <p class="section-label">Education</p>
+
+    <div class="edu-entry">
+      <div class="edu-row">
+        <div class="edu-deg">M.S. Information Technology — Software Design &amp; Management</div>
+        <div class="edu-date">2024 – 2026</div>
+      </div>
+      <div class="edu-school">Liberty University · Remote</div>
+    </div>
+
+    <div class="edu-entry">
+      <div class="edu-row">
+        <div class="edu-deg">B.B.A. Information Systems · Minor: Computer Science</div>
+        <div class="edu-date">2018 – 2020</div>
+      </div>
+      <div class="edu-school">University of North Dakota · Grand Forks, ND</div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- VOLUNTEER -->
+  <section>
+    <p class="section-label">Volunteer</p>
+    <div class="vol-item">EMT · October 2017 – Present</div>
+    <div class="vol-item">Grand Forks Youth for Christ — Chairman of the Board · September 2020 – Present</div>
+  </section>
+
+  <hr class="divider" />
+
+  <p class="footer">// grand forks, nd · updated 2026</p>
+
+</div>
+
+</body>
+</html>
