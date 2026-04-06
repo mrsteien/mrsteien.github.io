@@ -97,6 +97,14 @@
 
     .hero-links a:hover { border-color: var(--accent); }
 
+    .bio-blurb {
+      font-size: 14px;
+      max-width: 64rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-top: 1.75rem;
+    }
+
     /* Divider */
     .divider {
       border: none;
@@ -232,6 +240,21 @@
     .edu-date { font-family: 'Space Mono', monospace; font-size: 10px; color: var(--text-tertiary); }
     .edu-school { font-size: 13px; color: var(--text-secondary); margin-top: 3px; }
 
+    /* Certifications */
+    .cert-entry { margin-bottom: 1.25rem; }
+    .cert-entry:last-child { margin-bottom: 0; }
+    .cert-item {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .cert-item a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(55,138,221,0.3);
+    }
+    .cert-item a:hover { border-color: var(--accent); }
+
     /* Volunteer */
     .vol-item {
       font-size: 13px;
@@ -289,10 +312,11 @@
     </div>
     <div class="hero-links">
       <a href="mailto:michael.steien@gmail.com">michael.steien@gmail.com</a>
-      <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/michael-steien-6a40131a7" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/mrsteien" target="_blank" rel="noopener">GitHub</a>
       <a href="tel:2186894212">218-689-4212</a>
     </div>
+    <p class="bio-blurb">Information Systems Engineer with 6+ years of experience in data and analytics.</p>
   </div>
 
   <hr class="divider" />
@@ -355,7 +379,7 @@
 
     <div class="job">
       <div>
-        <div class="job-title">Cyber Warfare Officer <span class="badge">current</span></div>
+        <div class="job-title">Officer (Part-Time) <span class="badge">current</span></div>
         <div class="job-company">North Dakota Army National Guard</div>
       </div>
       <div class="job-date">Aug 2023 – Present</div>
@@ -376,8 +400,9 @@
       <p class="skill-group-label">Languages</p>
       <span class="tag hi">SQL</span>
       <span class="tag hi">Python</span>
-      <span class="tag hi">Node.js</span>
+      <span class="tag hi">TypeScript</span>
       <span class="tag">DAX</span>
+
     </div>
 
     <div class="skill-group">
@@ -412,19 +437,35 @@
 
     <div class="edu-entry">
       <div class="edu-row">
-        <div class="edu-deg">M.S. Information Technology — Software Design &amp; Management</div>
-        <div class="edu-date">2024 – 2026</div>
-      </div>
-      <div class="edu-school">Liberty University · Remote</div>
-    </div>
-
-    <div class="edu-entry">
-      <div class="edu-row">
         <div class="edu-deg">B.B.A. Information Systems · Minor: Computer Science</div>
         <div class="edu-date">2018 – 2020</div>
       </div>
       <div class="edu-school">University of North Dakota · Grand Forks, ND</div>
     </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <p class="section-label">Certifications</p>
+
+    <div class="cert-entry">
+      <div class="cert-item">
+        <strong>Palantir Foundry Application Developer</strong> · <a href="https://verify.skilljar.com/c/uuncy6756b9t" target="_blank" rel="noopener">View certificate</a>
+      </div>
+    </div>
+
+    <div class="cert-entry">
+      <div class="cert-item">
+        <strong>Palantir American Tech Fellowship</strong> · <a href="https://certifications.ontologize.com/credentials/c69c3978-cfd2-4af4-9866-bea53218cd00" target="_blank" rel="noopener">View certificate</a>
+      </div>
+    </div>
+
+    <div class="cert-entry">
+      <div class="cert-item">
+        <strong>Palantir Foundry Aware</strong> · <a href="https://verify.skilljar.com/c/xvruqpvoa4kd" target="_blank" rel="noopener">View certificate</a>
+      </div>
   </section>
 
   <hr class="divider" />
